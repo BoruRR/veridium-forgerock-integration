@@ -255,7 +255,7 @@ biometrics.
 If configured correctly, AM will redirect you to the Veridium identity provider
 for authentication. You will be presented with a page similar to the below:
 
-![](qr-sample.png)
+![](images/qr-sample.png)
 
 3.  In the VeridiumID Authenticator app, tap your profile to open a QR code
     scanner.
