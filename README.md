@@ -264,6 +264,8 @@ for authentication. You will be presented with a page similar to the below:
 
 5.  AM should now give you access to the user’s profile page.
 
+![](UserProfile.png)
+
 What’s Next?
 ------------
 
