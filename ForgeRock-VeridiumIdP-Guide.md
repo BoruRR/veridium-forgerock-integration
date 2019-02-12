@@ -77,16 +77,16 @@ Service Provider configuration to match the VeridiumID partnership settings.
 >   navigate to *Realms* \> *Realm Name* \> *Applications* \> *Federation* \>
 >   *Entity Providers*, and select *New* in the Entity Providers table.
 
-1.  Either add the provider to the circle of trust you already created, or
+3.  Either add the provider to the circle of trust you already created, or
     select the *Add to new* option and provide a New Circle of Trust name.
 
-2.  (Optional) If this SP requires more a different attribute mapping
+4.  (Optional) If this SP requires more a different attribute mapping
     configuration than the default IdP attribute mapping, set the mapping in the
     Attribute Mapping section. Map identity provider attribute names in the Name
     in Assertion column to user profile names from your identity repository in
     the Local Attribute Name column.
 
-3.  Click *Configure* to save your configuration and click “*No*” to “*Configure
+5.  Click *Configure* to save your configuration and click “*No*” to “*Configure
     Remote Identity Partner*”.
 
 ### Configure Service Provider for dynamic profile creation
