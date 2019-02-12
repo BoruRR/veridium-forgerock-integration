@@ -104,18 +104,18 @@ identities, follow the steps below.
 >   Dynamic Creation Default Roles Alias Search Attribute Name Dynamic uid
 >   Revert o o o Save Changes
 
-1.  Set *User Profile* to *Dynamic* and *Alias Search Attribute Name* to *uid*,
+2.  Set *User Profile* to *Dynamic* and *Alias Search Attribute Name* to *uid*,
     then click *Save Changes*.
 
-2.  Navigate to *Realms* \> *Realm Name* \> *Applications* \> *Federation* \>
+3.  Navigate to *Realms* \> *Realm Name* \> *Applications* \> *Federation* \>
     *Entity Providers* \> \<*Service*\_*Provider*\_*Name\>* \> *Assertion
     Processing* \> *Auto Federation*.
 
-3.  Configure as per the below screenshot.
+4.  Configure as per the below screenshot.
 
 ![](images/AssertionProcessing.png)
 
-1.  Next, click the *Services* tab. Scroll down to the *Assertion Consumer
+5.  Next, click the *Services* tab. Scroll down to the *Assertion Consumer
     Service* section and edit the URLs from “Consumer” to “AuthConsumer”.
 
 ![](images/AuthConService.png)
@@ -123,9 +123,9 @@ identities, follow the steps below.
 >   Note that you do not need to change the location for the PAOS service
 >   because integrated mode does not support the PAOS binding.
 
-1.  Click *Save* to save changes.
+6.  Click *Save* to save changes.
 
-2.  Export the XML-based metadata from your service provider which will be
+7.  Export the XML-based metadata from your service provider which will be
     shared with your Veridium IdP.
 
 >   \$ curl \\  
@@ -134,13 +134,10 @@ identities, follow the steps below.
 >   http://www.sp.example:8080/openam\&amp;realm=/mysubrealm"
 
 When you have configured your provider in the Top Level Realm, you can omit the query string from the URL.
-----------------------------------------------------------------------------------------------------------
-
 Alternatively, provide the URL to other providers so they can load the metadata.
---------------------------------------------------------------------------------
 
 Create Remote Identity Provider
--------------------------------
+------------------------------
 
 In this section you will add VeridiumID as a Remote Identity Provider and add it
 to the CoT created above for you SP. You will need the idp-metadata.xml file
@@ -236,15 +233,15 @@ biometrics.
 
 ![](images/va-appstore.png)
 
-1.  Open VeridiumID, allow any requested permissions.
+2.  Open VeridiumID, allow any requested permissions.
 
-2.  The app will open to the start page.
+3.  The app will open to the start page.
 
-3.  Tap SCAN QR CODE.
+4.  Tap SCAN QR CODE.
 
-4.  Scan the QR code sent by your Veridium contact.
+5.  Scan the QR code sent by your Veridium contact.
 
-5.  Follow the prompts to complete enrollment.
+6.  Follow the prompts to complete enrollment.
 
 ### Perform passwordless login
 
@@ -260,12 +257,12 @@ for authentication. You will be presented with a page similar to the below:
 
 ![](qr-sample.png)
 
-1.  In the VeridiumID Authenticator app, tap your profile to open a QR code
+3.  In the VeridiumID Authenticator app, tap your profile to open a QR code
     scanner.
 
-2.  Scan the QR code and then present your biometrics.
+4.  Scan the QR code and then present your biometrics.
 
-3.  AM should now give you access to the user’s profile page.
+5.  AM should now give you access to the user’s profile page.
 
 What’s Next?
 ------------
