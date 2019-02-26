@@ -23,7 +23,7 @@ In order to complete this evaluation, you will first need to contact Veridium to
 provision the IdP side of the Federation and then simply download a mobile app for the biometric
 enrolment and authentication. Please contact us at <info@veridiumid.com> to get
 started or for more information.
- [http://openam.partner.com:8080/openam/XUI/ -
+ [http://bk:8080/openam/XUI/ -
     login/&service=VeridiumChain](http://openam.partner.com:8080/openam/XUI/#login/&service=VeridiumChain)
 
 Prerequisites
