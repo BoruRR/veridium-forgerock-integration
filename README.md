@@ -219,7 +219,7 @@ authentication chain to redirect authentication to VeridiumID.
 
 5.  Click *OK* and then *Save Changes*.
 
-Test you SAML2 configuration
+Test SAML2 configuration
 ----------------------------
 
 In this section you will test your configuration by logging in to the AM console
@@ -229,7 +229,7 @@ biometrics.
 
 ### Install the VeridiumID Mobile App
 
-1.  Download VeridiumID from the Apple or Google Play App Store:
+1.  Download VeridiumID mobile app from the Apple or Google Play App Store:
 
 ![](images/va-appstore.png)
 
