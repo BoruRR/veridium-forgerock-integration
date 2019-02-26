@@ -5,32 +5,26 @@ Overview
 
 Thank you for your interest in Veridium and biometric authentication!
 
-The VeridiumID solution replaces pins and passwords with biometric data which
-expresses something you are, which is the strongest and most secure evidence
-that you are who you say you are. VeridiumID presentation attack detection and
-distributed storage architecture combine to provide true and secure identity
-authentication. VeridiumID software handles everything from biometric data
-collection and its secure storage to quickly finding and matching it to users
-during authentication.
+You can easily add strong, multi-factor, mobile biometric authentication when using SAML Federation as a ForgeRock Access Management user.
 
-VeridiumID installs easily in your network where it provides high assurance
+The VeridiumID authentication platfrom replaces pins and passwords with biometrics. Biometrics represent something you are, which is the strongest and most secure evidence that you are who you say you are. This independent authentication layer allows you the freedom to customize the user experience - choosing the best biometrics for your needs - from native (fingerprint of face) - to Veridium's proprietary 4 Fingers TouchlessID, or other 3rd party biometrics. This makes VeridiumID effective for presentation attack detection and strong multi-factor authentication.
+
+VeridiumID installs easily in your network to provide high assurance
 authentication decisions wherever they are needed. From physical access to
-website and sensitive server access, to high value financial transactions,
-VeridiumID provides the level of authentication assurance you need to manage
-access.
+website and sensitive server access, to websites and specific use cases like high value financial transactions,
+VeridiumID provides the strongest level of authentication assurance with biometrics.
 
-And it works just by you being you.
-
-As a ForgeRock Access Management user, you can now add mobile device based
-biometric authentication into your authentication flows using a SAML Federation.
+As a ForgeRock Access Management user, you can now add biometric authentication into your authentication flows using a SAML Federation.
 
 Before you begin
 ================
 
 In order to complete this evaluation, you will first need to contact Veridium to
-provision the IdP side of the Federation and a mobile app for the biometric
+provision the IdP side of the Federation and then simply download a mobile app for the biometric
 enrolment and authentication. Please contact us at <info@veridiumid.com> to get
 started or for more information.
+ [http://openam.partner.com:8080/openam/XUI/ -
+    login/&service=VeridiumChain](http://openam.partner.com:8080/openam/XUI/#login/&service=VeridiumChain)
 
 Prerequisites
 =============
@@ -38,12 +32,11 @@ Prerequisites
 -   You are familiar with ForgeRock Federation concepts and have access to the
     AM SAML v2.0 Guide -
     <https://backstage.forgerock.com/docs/am/6/saml2-guide/#saml2-configure-remote-idp>.
-    Procedure steps reference relevant sections of this guide.
+    The procedure steps reference relevant sections of this guide.
 
--   You have a working ForgeRock OpenAM instance.
+-   A working ForgeRock OpenAM instance.
 
--   You have engaged Veridium and have received updated metadata and the mobile
-    app.
+-   You have engaged Veridium and have received the POC metadata file and have downloaded the appropriate Android or iOS authenticator mobile app.
 
 Enabling the OpenAM/VeridiumID SAML Federation
 ==============================================
@@ -77,10 +70,10 @@ Service Provider configuration to match the VeridiumID partnership settings.
 >   navigate to *Realms* \> *Realm Name* \> *Applications* \> *Federation* \>
 >   *Entity Providers*, and select *New* in the Entity Providers table.
 
-3.  Either add the provider to the circle of trust you already created, or
+3.  Either add the provider to the circle of trust you have already created, or
     select the *Add to new* option and provide a New Circle of Trust name.
 
-4.  (Optional) If this SP requires more a different attribute mapping
+4.  (Optional) If this SP requires a different attribute mapping
     configuration than the default IdP attribute mapping, set the mapping in the
     Attribute Mapping section. Map identity provider attribute names in the Name
     in Assertion column to user profile names from your identity repository in
@@ -91,18 +84,13 @@ Service Provider configuration to match the VeridiumID partnership settings.
 
 ### Configure Service Provider for dynamic profile creation
 
-If you want to use dynamic profile creation with auto-federation to federate
+If you want to use dynamic profile creation with auto-federation to create federated
 identities, follow the steps below.
 
 1.  Navigate to *Configure* \> *Authentication* \> *Core Attributes \> User
     Profile*
 
 ![](images/ConfigureDynamicProfile.png)
-
->   REALMS CONFIGURE Authentication - Settings Settings Core User Profile
->   DEPLOYMENT Account Lockout General Trees Security User Profile User Profile
->   Dynamic Creation Default Roles Alias Search Attribute Name Dynamic uid
->   Revert o o o Save Changes
 
 2.  Set *User Profile* to *Dynamic* and *Alias Search Attribute Name* to *uid*,
     then click *Save Changes*.
@@ -111,7 +99,7 @@ identities, follow the steps below.
     *Entity Providers* \> \<*Service*\_*Provider*\_*Name\>* \> *Assertion
     Processing* \> *Auto Federation*.
 
-4.  Configure as per the below screenshot.
+4.  Configure as shown in the following screenshot.
 
 ![](images/AssertionProcessing.png)
 
@@ -149,11 +137,13 @@ from the VeridiumID server.
 
 2.  Under *Realms* \> *Realm Name* \> *Dashboard* \> *Configure SAMLv2
     Provider*, click *Configure Remote Identity Provider*.
+    
+![](images/RealmOvervw.png)
 
-3.  Provide the identity provider metadata file i.e.
+3.  Upload the identity provider metadata file i.e.
     *veridiumid-idp-metadata.xml*.  
     The remote identity provider's metadata might contain more than one
-    KeyDescriptor elements. If it does, the hosted AM service provider will
+    KeyDescriptor element. If it does, the hosted AM service provider will
     validate assertions from the identity provider against certificates with key
     descriptors with an appropriate use attribute. Incoming assertions that
     cannot be validated against any of the certificates will be rejected by the
@@ -161,15 +151,13 @@ from the VeridiumID server.
     **Note**  
     Ensure the MetaAlias is unique for each provider configured in a CoT and in
     the realm.
+    
+![](images/idp-meta-upload.png)
 
 4.  Either add the provider to the circle of trust you already created, or
     select *Add to new* and provide a New Circle of Trust name.
 
 5.  Click *Configure* to save your configuration.
-
-![](images/RealmOvervw.png)
-
-![](images/idp-meta-upload.png)
 
 ![](images/remote-idp.png)
 
