@@ -28,8 +28,7 @@ Prerequisites
 =============
 
 -   You are familiar with ForgeRock Federation concepts and have access to the
-    AM SAML v2.0 Guide -
-    <https://backstage.forgerock.com/docs/am/6/saml2-guide/#saml2-configure-remote-idp>.
+    [AM SAML v2.0 Guide](https://backstage.forgerock.com/docs/am/6/saml2-guide/#saml2-configure-remote-idp).
     The procedure steps reference relevant sections of this guide.
 
 -   A working ForgeRock OpenAM instance.
