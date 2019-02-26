@@ -235,8 +235,7 @@ biometrics.
 
 2.  Login into the user’s profile using a URL that references the authentication
     chain with SAML2 module that you created above. For example,
-    [http://openam.partner.com:8080/openam/XUI/ -
-    login/&service=VeridiumChain](http://openam.partner.com:8080/openam/XUI/#login/&service=VeridiumChain)
+    [http://openam.partner.com:8080/openam/XUI/#login/&service=VeridiumChain](http://openam.partner.com:8080/openam/XUI/#login/&service=VeridiumChain)
 
 If configured correctly, AM will redirect you to the Veridium identity provider
 for authentication. You will be presented with a page similar to the below:
